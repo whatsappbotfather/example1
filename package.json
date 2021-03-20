@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/whatsappbotfather/example1/issues"
   },
-  "homepage": "https://github.com/whatsappbotfather/example1#readme"
+  "homepage": "https://github.com/whatsappbotfather/example1#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "node-telegram-bot-api": "^0.51.0"
+  }
 }
