@@ -19,8 +19,6 @@ const method_map = {
 };
 
 app.post("/webhook", async (req, res) => {
-    const address = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-    console.log(`External call from ${address}`);
 
     const { bot, message } = req.body || {};
 
@@ -121,7 +119,6 @@ app.post("/webhook", async (req, res) => {
             break;
     }
 
-    res.send("Hello World!");
 });
 
 app.listen(process.env.PORT, () => {
