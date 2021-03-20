@@ -1,14 +1,11 @@
-process.env.BASE_URL = 'https://api.whatsappbotfather.com/WAPI';
-process.env.TG_CHAT_ID = '';
-process.env.TG_TOKEN = '';
-process.env.WA_TOKEN = '';
+require('dotenv').config({
+    path: './.env.test'
+});
 
 const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());  
-
-const port = 3000;
 
 const axios = require('axios');
 const TelegramAPI = require('node-telegram-bot-api');
@@ -127,6 +124,6 @@ app.post("/webhook", async (req, res) => {
     res.send("Hello World!");
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });
